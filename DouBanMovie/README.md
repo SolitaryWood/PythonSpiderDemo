@@ -1,4 +1,4 @@
-##豆瓣电影爬虫
+## 豆瓣电影爬虫
 
 使用python2和requests库
 
@@ -11,15 +11,15 @@
 	根据关键词搜索电影
 	https://api.douban.com/v2/movie/search?q=<keyword>'
 
-效果截图
+## 效果截图  
 
-电影排行
+电影排行  
 ![](./images/1.png)
 
-搜索电影
+搜索电影  
 ![](./images/2.png)
 
-查看电影详情
+查看电影详情  
 ![](./images/3.png)
 
 
