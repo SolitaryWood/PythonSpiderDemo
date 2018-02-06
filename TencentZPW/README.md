@@ -14,7 +14,7 @@
 安装完毕后，在命令行输入scrapy，如果出现下面的提示，代表安装成功  
 ![](./images/1.png)
 
-#### 新建爬虫一个项目
+#### 新建一个爬虫项目
 
 	scrapy startproject mySpider
 	# mySpider为你新建的爬虫项目名，这里我的项目叫mySpider
@@ -175,3 +175,25 @@ close_spider方法是可选的，当spider被关闭时，这个方法被调用
 
 最后爬取结果，3116个职位全部爬取下来了
 ![](./images/3.png)
+
+
+----------
+
+新增继承自CrawlSpider类
+
+	import scrapy
+	from scrapy.linkextractors import LinkExtractor
+	from scrapy.spiders import CrawlSpider, Rule
+	from tencentSpider.items import TencentItem
+
+	class TencentcrawlSpider(CrawlSpider):
+    name = 'tencentcrawl'
+    allowed_domains = ['tencent.com']
+    start_urls = ['https://hr.tencent.com/position.php?&start=0']
+
+    rules = (
+    	# LinkExtractor方法创建一个对象，规定要提取的链接
+        Rule(LinkExtractor(allow=r'start=\d+'), callback='parse_item', follow=True),
+    )
+
+    def parse_item(self, response):
