@@ -42,6 +42,9 @@
 
 	# 删除集合中所有文档
 	db.集合名.drop()
+	
+	# 退出客户端
+	exit
 
 在setting.py文件中数据库信息
 
@@ -55,6 +58,20 @@
 	MONGODB_TABLE = 'DoubanMovie'
 
 注：在setting文件中要配置user-agent头，有防爬机制
+
+items文件
+
+import scrapy
+
+class DoubanspiderItem(scrapy.Item):
+# 电影名
+movie_name = scrapy.Field()
+# 电影信息
+movie_info = scrapy.Field()
+# 电影评分
+movie_rating = scrapy.Field()
+# 电影经典语句
+movie_quote = scrapy.Field()
 
 爬虫文件
 
@@ -97,7 +114,7 @@
 	
 	    def process_item(self, item, spider):
 	        data = dict(item)
-	        # 向表插入数据
+	        # 向集合中插入数据
 	        self.post.insert(data)
 	
 	        return item
