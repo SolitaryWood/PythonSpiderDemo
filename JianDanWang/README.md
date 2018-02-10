@@ -24,7 +24,7 @@ img标签在p标签下，在这里我准备利用lxml库进行数据提取
 
 在加上非常友好的requests库，相当完美  
 
-爬取妹子图首页：[http://jandan.net/ooxx](http://jandan.net/ooxx "煎蛋网")    
+爬取妹子图首页：[煎蛋网-妹子图](http://jandan.net/ooxx)    
 
 然而页面返回如下：
 
@@ -38,7 +38,7 @@ what fuck！！！ （内心问候以下）
 
 selenium安装：`pip install selenium`
 
-phantomjs安装：只能从它的官方网站[http://phantomjs.org/download.html](http://phantomjs.org/download.html)下载
+phantomjs安装：只能从它的官方网站[phanto](http://phantomjs.org/download.html)下载
 
 	from selenium import webdriver
 	# 使用phantomjs浏览器创建浏览器对象
