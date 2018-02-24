@@ -4,7 +4,7 @@
 
 使用python2编写，用到requests库发送请求，BeautifulSoup进行数据提取，`urllib.urlretrieve()`下载表情包。
 
-最主要的是利用到了多线程，不过只是简单的多线程，没有使用队列，而是使用了threading模块自带的线程锁，多线程还需要进行优化。
+使用多线程threading模块，并且根据python线程同步的两种不同机制，互斥锁和队列，编写了两个版本的代码。
 
 最后来一张效果图：
 
